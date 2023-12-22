@@ -1,30 +1,11 @@
-name: Node.js CI
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
+on: push
+job:
+  build-node:
+    run-on: ubuntu-latest
     container: node:16
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-
+    step:
+      -run: node --version
+      -run: npm --version
+      -user: actions/checkout@v3
+      -run: npm install
+      -run: node src/index.js

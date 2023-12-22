@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="/css/cart.css">
+
+<div class="container mt-5">
+  <h1 class="block__title mb-3 text-center">Giỏ<span class="highlight"> Hàng
+  </span>
+  </h1>
+
+  <!-- Hiển thị sản phẩm trong giỏ hàng hoặc thông báo khi giỏ hàng trống -->
+  <div id="cart-items"></div>
+  <p id="empty-cart-message" class="text-center text-danger mb-4"></p>
+
+  <div class="text-center mt-3">
+    <a href="http://localhost:7749" class="btn btn-primary mb-3">Quay lại trang chủ</a>
+  </div>
+</div>
+
+<script>
+// Lấy dữ liệu từ Local Storage và hiển thị sản phẩm trong giỏ hàng
+    document.addEventListener("DOMContentLoaded", function() {
+      displayCartItems();
+    });
+
+    function displayCartItems() {
+      var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+      var cartItemsContainer = document.getElementById('cart-items');
+      var emptyCartMessage = document.getElementById('empty-cart-message');
+      
+      cartItemsContainer.innerHTML = ''; // Xóa nội dung hiện tại để cập nhật lại
+
+      if (cartItems.length === 0) {
+        emptyCartMessage.innerText = 'Không có sản phẩm trong giỏ hàng!';
+      } else {
+        emptyCartMessage.innerText = ''; // Nếu có sản phẩm, ẩn thông báo
+        cartItems.forEach(function(item, index) {
+          var productHTML = `
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img src="${item.image}" alt="${item.name}" class="img-fluid rounded p-3">
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${item.name}</h5>
+                    <p class="card-text">${item.price}</p>
+                    <!-- Thêm các thông tin sản phẩm khác cần hiển thị -->
+                    <button class="btn btn-danger mx-3" onclick="removeItem(${index})">
+                      <i class="bi bi-trash"></i> Xoá sản phẩm
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          cartItemsContainer.innerHTML += productHTML;
+        });
+      }
+    }
+
+    function removeItem(index) {
+      var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      cartItems.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      displayCartItems(); // Cập nhật hiển thị giỏ hàng sau khi xoá
+    }
+</script>

@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    /* Thiết lập tỷ lệ 1:1 cho hình ảnh chính */
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnail-container img {
+    width: 80px;
+    height: 80px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.thumbnail-container img,
+.main-image img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-rounded {
+    border-radius: 10px;
+    /* Điều chỉnh giá trị để thay đổi độ cong của viền */
+}
+
+.selected-thumbnail {
+    // border: 2px solid red;
+    border: solid red;
+}
+
+a.sp.btn.btn-secondary.mx-lg-3{
+    background-color: #ff9583;
+    margin-top: auto;
+}
+
+#textinfo{
+    color: #ff9583;
+}

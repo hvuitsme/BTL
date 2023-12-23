@@ -6,94 +6,69 @@
       <li class="hero-nav__item">
         <a href="http://localhost:7749/"><img class="hero-nav__logo" src="/img/logo.svg" /></a>
       </li>
-      <li
-        id="hero-menu"
-        class="flex-grow-1 hero__nav-list hero__nav-list--mobile-menu ft-menu"
-      >
-        <ul
-          class="hero__menu-content nav flex-column flex-lg-row ft-menu__slider animated list-unstyled p-2 p-lg-0"
-        >
+      <li id="hero-menu" class="flex-grow-1 hero__nav-list hero__nav-list--mobile-menu ft-menu">
+        <ul class="hero__menu-content nav flex-column flex-lg-row ft-menu__slider animated list-unstyled p-2 p-lg-0">
           <li class="flex-grow-1">
             <ul class="nav nav--lg-side list-unstyled align-items-center p-0">
               <li class="hero-nav__item">
-                <a href="/cart" class="hero-nav__link">Carts</a>
+                <a href="/cart" class="hero-nav__link">Giỏ Hàng</a>
               </li>
               <li class="hero-nav__item">
-                <a href="/#contact-us" class="hero-nav__link">Contact Us</a>
+                <a href="/#contact-us" class="hero-nav__link">Liên hệ</a>
               </li>
               <li class="hero-nav__item">
-                <a href="/#pricing" class="hero-nav__link">Pricing</a>
+                <a href="/#pricing" class="hero-nav__link">Định giá</a>
               </li>
               <li class="hero-nav__item">
-                <a href="/#testimonials" class="hero-nav__link">Testimonials</a>
+                <a href="/#testimonials" class="hero-nav__link">Lời chứng thực</a>
               </li>
               <li class="hero-nav__item">
-                <a href="/#features" class="hero-nav__link">Features</a>
+                <a href="/#features" class="hero-nav__link">Đặc trưng</a>
               </li>
               <li class="hero-nav__item">
-                <a href="/#other_product" class="hero-nav__link">Other Products</a>
+                <a href="/#other_product" class="hero-nav__link">Sản Phẩm Khác</a>
               </li>
               <li class="hero-nav__item">
-                <a href="/#product" class="hero-nav__link">Product</a>
+                <a href="/#product" class="hero-nav__link">Sản Phẩm</a>
               </li>
             </ul>
           </li>
         </ul>
-        <button
-          onclick="document.querySelector('#hero-menu').classList.toggle('ft-menu--js-show')"
-          class="ft-menu__close-btn animated"
-        >
-          <svg
-            class="bi bi-x"
-            width="1em"
-            height="1em"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
-              clip-rule="evenodd"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
-              clip-rule="evenodd"
-            />
+        <button onclick="document.querySelector('#hero-menu').classList.toggle('ft-menu--js-show')"
+          class="ft-menu__close-btn animated">
+          <svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+              clip-rule="evenodd" />
           </svg>
         </button>
       </li>
       <li class="d-lg-none flex-grow-1 d-flex flex-row-reverse hero-nav__item">
-        <button
-          onclick="document.querySelector('#hero-menu').classList.toggle('ft-menu--js-show')"
-          class="text-center px-2"
-        >
+        <button onclick="document.querySelector('#hero-menu').classList.toggle('ft-menu--js-show')"
+          class="text-center px-2">
           <i class="fas fa-bars"></i>
         </button>
       </li>
     </ul>
   </nav>
 
-  <div
-    id="carouselExampleControls"
-    class="carousel slide"
-    data-bs-ride="carousel"
-    data-bs-interval="4000"
-  >
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000000000">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="hero__content container mx-auto">
           <div class="row px-0 mx-0 align-items-center">
             <div class="col-lg-6 px-0">
               <h1 class="hero__title mb-3">
-                OUR PRODUCT IS
-                <span class="highlight">BETTER</span>
-                THAN OTHER
+                SẢN PHẨM CỦA CHÚNG TÔI
+                <span class="highlight">TỐT HƠN</span>
+                CÁC SẢN PHẨM KHÁC
               </h1>
               <p class="hero__paragraph mb-5">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standarded
+                "Sản phẩm của chúng tôi không chỉ nổi bật với chất lượng cao và tính năng đổi mới, mà còn mang đến giá
+                trị tối ưu, vượt trội hơn so với các sản phẩm khác trên thị trường. Khám phá sự khác biệt với trải
+                nghiệm độc đáo từ sản phẩm của chúng tôi ngay hôm nay!"
               </p>
               <div class="hero__btns-container">
                 <a class="hero__btn btn btn-primary mb-2 mb-lg-0" href="#">
@@ -108,8 +83,7 @@
               <div class="hero__img-container">
                 <img
                   src="https://genk.mediacdn.vn/139269124445442048/2022/6/4/gsmarena004-1654320953556-1654320954181840473003.jpg"
-                  class="hero__img w-100"
-                />
+                  class="hero__img w-100" />
               </div>
             </div>
           </div>
@@ -120,13 +94,14 @@
           <div class="row px-0 mx-0 align-items-center">
             <div class="col-lg-6 px-0">
               <h1 class="hero__title mb-3">
-                OUR PRODUCT IS
-                <span class="highlight">BETTER</span>
-                THAN OTHER
+                SẢN PHẨM CỦA CHÚNG TÔI
+                <span class="highlight">TỐT HƠN</span>
+                CÁC SẢN PHẨM KHÁC
               </h1>
               <p class="hero__paragraph mb-5">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standarded
+                "Sản phẩm của chúng tôi không chỉ nổi bật với chất lượng cao và tính năng đổi mới, mà còn mang đến giá
+                trị tối ưu, vượt trội hơn so với các sản phẩm khác trên thị trường. Khám phá sự khác biệt với trải
+                nghiệm độc đáo từ sản phẩm của chúng tôi ngay hôm nay!"
               </p>
               <div class="hero__btns-container">
                 <a class="hero__btn btn btn-primary mb-2 mb-lg-0" href="#">
@@ -139,10 +114,8 @@
             </div>
             <div class="col-lg-5 mt-5 mt-lg-0 mx-0">
               <div class="hero__img-container">
-                <img
-                  src="https://vtv1.mediacdn.vn/2019/10/29/photo-1-1572362412108206073343.png"
-                  class="hero__img w-100"
-                />
+                <img src="https://vtv1.mediacdn.vn/2019/10/29/photo-1-1572362412108206073343.png"
+                  class="hero__img w-100" />
               </div>
             </div>
           </div>
@@ -153,13 +126,14 @@
           <div class="row px-0 mx-0 align-items-center">
             <div class="col-lg-6 px-0">
               <h1 class="hero__title mb-3">
-                OUR PRODUCT IS
-                <span class="highlight">BETTER</span>
-                THAN OTHER
+                SẢN PHẨM CỦA CHÚNG TÔI
+                <span class="highlight">TỐT HƠN</span>
+                CÁC SẢN PHẨM KHÁC
               </h1>
               <p class="hero__paragraph mb-5">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standarded
+                "Sản phẩm của chúng tôi không chỉ nổi bật với chất lượng cao và tính năng đổi mới, mà còn mang đến giá
+                trị tối ưu, vượt trội hơn so với các sản phẩm khác trên thị trường. Khám phá sự khác biệt với trải
+                nghiệm độc đáo từ sản phẩm của chúng tôi ngay hôm nay!"
               </p>
               <div class="hero__btns-container">
                 <a class="hero__btn btn btn-primary mb-2 mb-lg-0" href="#">
@@ -174,8 +148,7 @@
               <div class="hero__img-container">
                 <img
                   src="https://img.websosanh.vn/v2/users/root_product/images/dong-ho-thong-minh-apple-watch/vu8xytr5plgn0.jpg"
-                  class="hero__img w-100"
-                />
+                  class="hero__img w-100" />
               </div>
             </div>
           </div>

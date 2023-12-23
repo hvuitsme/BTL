@@ -1,0 +1,154 @@
+<link rel="stylesheet" href="/css/info.css" />
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+
+<div class="container">
+  <nav
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+    aria-label="breadcrumb"
+  >
+    <ol class="breadcrumb my-3">
+      <li class="breadcrumb-item"><a href="http://localhost:7749/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Đồng hồ thông minh Garmin Forerunner 55, GPS, KOR/SEA - Hàng chính hãng</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row pb-4">
+    <div class="col-lg-5 mb-2">
+      <div class="card border-0">
+        <div class="card-body p-4">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg">
+              <div class="main-image">
+                <img
+                  id="main-img"
+                  src="https://salt.tikicdn.com/cache/750x750/ts/product/f3/c1/4e/9a3c60149197bfe170ef77bda23f191b.jpg.webp"
+                  alt="Main Image"
+                  class="img-fluid custom-rounded"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+              <div class="thumbnail-container">
+                <img
+                src="https://salt.tikicdn.com/cache/750x750/ts/product/f3/c1/4e/9a3c60149197bfe170ef77bda23f191b.jpg.webp"
+                alt="Thumbnail 1"
+                onclick="changeImage('https://salt.tikicdn.com/cache/750x750/ts/product/f3/c1/4e/9a3c60149197bfe170ef77bda23f191b.jpg.webp')"
+                class="img-thumbnail selected-thumbnail"
+                /> <!-- Thêm class 'selected-thumbnail' vào đây -->
+                <!-- Thêm class 'selected-thumbnail' cho ảnh đầu tiên khi trang được tải -->
+                <img
+                  src="https://salt.tikicdn.com/cache/750x750/ts/product/c5/38/3a/c47d5e5a9a48bdcf017d16fa028d50ba.jpg.webp"
+                  alt="Thumbnail 2"
+                  onclick="changeImage('https://salt.tikicdn.com/cache/750x750/ts/product/c5/38/3a/c47d5e5a9a48bdcf017d16fa028d50ba.jpg.webp')"
+                  class="img-thumbnail"
+                />
+                <img
+                  src="https://salt.tikicdn.com/cache/750x750/ts/product/ff/e5/4f/05d6a49c37ea45cb4e65dfef73024e14.jpg.webp"
+                  alt="Thumbnail 2"
+                  onclick="changeImage('https://salt.tikicdn.com/cache/750x750/ts/product/ff/e5/4f/05d6a49c37ea45cb4e65dfef73024e14.jpg.webp')"
+                  class="img-thumbnail"
+                />
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-7 mb-2">
+      <div class="card border-0 h-100">
+        <div class="card-body">
+            <p class="card-text sp"><h1 class="m-0" id="textinfo">Đồng hồ thông minh Garmin Forerunner 55, GPS, KOR/SEA - Hàng chính hãng</h1></p>
+            <span class="block-20__person-rating">
+                <p>
+                {{!-- <i class="fas fa-star star-bright"></i>
+                <i class="fas fa-star star-bright"></i>
+                <i class="fas fa-star star-bright"></i>
+                <i class="fas fa-star star-bright"></i> --}}
+                <i class="fas fa-star star-bright"></i>
+                4.8</p>
+            </span>
+            <p class="card-text "><del>99.812.167.905,41₫</del> -26%</p>
+            <p class="card-text price">5.020.000₫</p>
+            <a class="sp btn btn-secondary mx-lg-3 mb-1" href="#" onclick="addToCart()">Thêm vào giỏ hàng</a>
+            <p class="text-center align-self-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+              <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+              </svg>
+              Vận chuyển trong 2-4 tuần.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  //function changeImage(imageSrc) { document.getElementById("main-img").src =
+  //imageSrc; }
+
+  //function changeImage(imageSrc) {
+    //gsap.to('.main-image img', { duration: 0.3, opacity: 0, onComplete: function () {
+        //document.getElementById('main-img').src = imageSrc;
+        //gsap.to('.main-image img', { duration: 0.3, opacity: 1 });
+    //} });}
+
+// script.js
+function changeImage(imageSrc) {
+  var mainImage = document.getElementById('main-img');
+  var thumbnails = document.querySelectorAll('.thumbnail-container img');
+
+  // Sử dụng gsap để thêm hiệu ứng chuyển động mượt mà
+  gsap.to(mainImage, { duration: 0.5, opacity: 0, x: -50, onComplete: function () {
+    mainImage.src = imageSrc;
+    gsap.to(mainImage, { duration: 0.5, opacity: 1, x: 0 });
+  } });
+
+  // Xóa class 'selected-thumbnail' từ tất cả các ảnh thumbnail
+  thumbnails.forEach(function (thumbnail) {
+    thumbnail.classList.remove('selected-thumbnail');
+  });
+
+  // Thêm class 'selected-thumbnail' cho ảnh thumbnail được nhấn
+  var selectedThumbnail = Array.from(thumbnails).find(t => t.src === imageSrc);
+  if (selectedThumbnail) {
+    selectedThumbnail.classList.add('selected-thumbnail');
+  }
+}
+</script>
+
+<script>
+    // Tạo giỏ hàng hoặc lấy từ Local Storage
+var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart() {
+  // Lấy thông tin sản phẩm
+  var productName = document.getElementById('textinfo').innerText;
+  var productRating = '4.8'; // Bạn có thể cần lấy giá trị đánh giá từ đâu đó
+  var productPrice = '73.867.611.250₫'; // Bạn có thể cần lấy giá từ đâu đó
+  var productImage = document.getElementById('main-img').src;
+
+  // Tạo đối tượng sản phẩm
+  var product = {
+    name: productName,
+    rating: productRating,
+    price: productPrice,
+    image: productImage
+  };
+
+  // Thêm sản phẩm vào giỏ hàng
+  cart.push(product);
+
+  // Lưu giỏ hàng vào Local Storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Thông báo thành công hoặc có thể thực hiện các hành động khác (hiển thị thông báo, chuyển đến trang giỏ hàng, vv.)
+  alert('Sản phẩm đã được thêm vào giỏ hàng!');
+}
+
+</script>

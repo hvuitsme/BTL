@@ -561,6 +561,9 @@ button .carousel-control-prev {
   line-height: 1.5;
   opacity: .8; }
 
+.card-text:last-child {
+  margin-bottom: -12px !important; }
+
 p.card-text.sp {
   color: #ff9583; }
 
@@ -1196,7 +1199,8 @@ textarea.contact-form__input {
   margin-top: auto; }
 
 .card-text.price {
-  color: #ff9583; }
+  color: #ff9583;
+  font-size: 30px; }
 
 /* COL */
 .col-sm-3 {

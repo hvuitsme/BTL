@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster&display=swap");
 :root {
   --primary: #e01705;
   --secondary: #0a1f44;
@@ -16,7 +17,8 @@
 
 body {
   /* font-family: 'Poppins', sans-serif; */
-  font-family: Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Lobster', sans-serif;
   color: var(--alert-text-primary);
   /* dark mode */
   filter: invert(1) hue-rotate(180deg);

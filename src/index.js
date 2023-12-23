@@ -27,6 +27,10 @@ app.get('/info1', (req, res) => {
   res.render('info1');
 });
 
+app.get('/info2', (req, res) => {
+  res.render('info2');
+});
+
 app.get('/cart', (req, res) => {
   res.render('carts');
 });

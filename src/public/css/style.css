@@ -47,6 +47,9 @@ button:focus {
   outline: none;
   box-shadow: none; }
 
+button .carousel-control-prev {
+  color: black; }
+
 .btn {
   font-size: .87rem;
   padding: .8rem 1.6rem;

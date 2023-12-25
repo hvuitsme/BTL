@@ -24,7 +24,8 @@
   "homepage": "https://github.com/hvuitsme/BTL#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^7.1.2"
+    "express-handlebars": "^7.1.2",
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

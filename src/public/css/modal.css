@@ -1,0 +1,16 @@
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+
+.modal-title,
+.modal-body {
+  color: black; }
+
+p.text-black {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.img-modal.carousel-item img {
+  height: 466px; }

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/info.css" />
 <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
-<script src=""></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <div class="container">
   <nav
@@ -71,7 +71,7 @@
           </span>
           <p class="card-text "><del>99.812.167.905,41₫</del> -26%</p>
           <p class="card-text price">73.867.611.250₫</p>
-          <a class="sp btn btn-secondary mx-lg-3 mb-1" href="#" onclick="showalert()">Thêm vào giỏ hàng</a>
+          <a class="sp btn btn-secondary mx-lg-3 mb-1" href="#" onclick="addToCart()">Thêm vào giỏ hàng</a>
           <p class="text-center align-self-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck"
               viewBox="0 0 16 16">
@@ -150,7 +150,12 @@
 
     // Thông báo thành công hoặc có thể thực hiện các hành động khác (hiển thị thông báo, chuyển đến trang giỏ hàng, vv.)
 
-     // alert('Sản phẩm đã được thêm vào giỏ hàng!');
+     Swal.fire({
+      icon: 'success',
+      title: 'Sản phẩm đã được thêm vào giỏ hàng!',
+      showConfirmButton: false,
+      timer: 1500 // Thời gian hiển thị thông báo (milliseconds)
+    });
 
   }
 

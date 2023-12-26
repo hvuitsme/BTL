@@ -14,6 +14,11 @@
     <h3>Tổng Tiền: <span id="total-price">0₫</span></h3>
   </div>
 
+  <!-- Thêm nút thanh toán -->
+  <div class="text-center mt-3">
+    <button class="btn btn-success" onclick="redirectToPayment()">Thanh toán</button>
+  </div>
+
 
   <div class="text-center mt-3">
     <a href="http://localhost:7749" class="btn btn-primary mb-3">Quay lại trang chủ</a>
@@ -202,10 +207,19 @@ function formatCurrency(amount) {
 
     // Hiển thị tổng tiền với định dạng tiền tệ
     totalPriceElement.innerText = 'Tổng giá: ' + formatCurrency(total);
+    }
   }
-}
 
-
+  function redirectToPayment() {
+  // Kiểm tra giỏ hàng có sản phẩm không trước khi chuyển hướng
+  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  if (cartItems.length > 0) {
+    // Chuyển hướng sang trang thanh toán (đặt đường dẫn tương ứng của trang thanh toán)
+    window.location.href = '/thanh-toan'; // Đặt đường dẫn đến trang thanh toán của bạn ở đây
+  } else {
+    alert('Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm vào giỏ hàng trước khi thanh toán.');
+  }
+  }
 
   function removeItemByName(productName) {
     var cartItems = JSON.parse(localStorage.getItem('cart')) || [];

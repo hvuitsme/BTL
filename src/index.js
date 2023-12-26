@@ -92,6 +92,10 @@ app.get('/cart', (req, res) => {
   res.render('carts');
 });
 
+app.get('/thanh-toan', (req, res) => {
+  res.render('payment');
+});
+
 app.set("views", path.join(__dirname, 'resources', 'views'))
 
 

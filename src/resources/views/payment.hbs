@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh toán</title>
+  <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="block__title mb-3 text-center">Thanh toán</h1>
+
+  <!-- Hiển thị sản phẩm trong giỏ hàng hoặc thông báo khi giỏ hàng trống -->
+  <div id="cart-items"></div>
+  <p id="empty-cart-message" class="text-center text-danger mb-4"></p>
+
+  <!-- Thêm vào sau phần hiển thị sản phẩm trong giỏ hàng -->
+  <div class="text-center text-black d-flex justify-content-end mt-3">
+    <h3>Tổng Tiền: <span id="total-price">0₫</span></h3>
+  </div>
+
+  <!-- Thêm phần thông tin thanh toán ở đây -->
+  <div class="payment-info">
+    <!-- Thêm các trường thông tin thanh toán, ví dụ: -->
+    <label for="fullName">Họ và tên:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <!-- Thêm các trường thông tin thanh toán khác nếu cần -->
+    
+    <button class="btn btn-success mt-3" onclick="submitPayment()">Thanh toán</button>
+  </div>
+
+  <div class="text-center mt-3">
+    <a href="http://localhost:7749" class="btn btn-primary mb-3">Quay lại trang chủ</a>
+  </div>
+</div>
+
+<!-- Include script -->
+<script>
+    // your-script-file.js
+
+document.addEventListener("DOMContentLoaded", function () {
+  displayCartItems();
+});
+
+function calculateTotalPriceWithCount(cartItems, productCounts) {
+  var total = 0;
+
+  Object.keys(productCounts).forEach(function (productName) {
+    var product = cartItems.find((item) => item.name === productName);
+    var productCount = productCounts[productName];
+
+    // Loại bỏ dấu chấm ngăn cách phần ngàn và phần triệu
+    var priceWithoutSeparator = product.price.replace(/\./g, '');
+
+    // Chuyển đổi thành số và nhân với số lượng
+    total += parseFloat(priceWithoutSeparator.replace('₫', '')) * productCount;
+  });
+
+  return total;
+}
+
+function addItemToCart(item) {
+  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  cartItems.push({
+    name: item.name,
+    image: item.image,
+    price: item.price, // Đảm bảo giá của sản phẩm được thiết lập đúng
+  });
+  localStorage.setItem('cart', JSON.stringify(cartItems));
+  displayCartItems();
+}
+
+function displayCartItems() {
+  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+  var cartItemsContainer = document.getElementById('cart-items');
+  var emptyCartMessage = document.getElementById('empty-cart-message');
+  var totalPriceElement = document.getElementById('total-price');
+
+  cartItemsContainer.innerHTML = ''; // Xóa nội dung hiện tại để cập nhật lại
+
+  if (cartItems.length === 0) {
+    emptyCartMessage.innerText = 'Không có sản phẩm trong giỏ hàng!';
+    totalPriceElement.innerText = 'Tổng giá: 0₫'; // Đặt tổng tiền là 0 nếu giỏ hàng trống
+  } else {
+    emptyCartMessage.innerText = ''; // Nếu có sản phẩm, ẩn thông báo
+
+    // Tạo một đối tượng để lưu trữ số lượng của từng sản phẩm
+    var productCounts = {};
+
+    cartItems.forEach(function (item, index) {
+      // Kiểm tra xem sản phẩm đã tồn tại trong đối tượng productCounts chưa
+      if (productCounts[item.name]) {
+        // Nếu đã tồn tại, tăng số lượng lên 1
+        productCounts[item.name]++;
+      } else {
+        // Nếu chưa tồn tại, tạo mới với số lượng là 1
+        productCounts[item.name] = 1;
+      }
+    });
+
+    // Hiển thị sản phẩm và số lượng trong giỏ hàng
+    Object.keys(productCounts).forEach(function (productName) {
+      var productCount = productCounts[productName];
+      var productHTML = `
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <img src="${cartItems.find((item) => item.name === productName).image}" alt="${productName}" class="img-fluid rounded p-3">
+            </div>
+            <div class="col-md-9">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${productName}</h5>
+                <p class="card-text">${cartItems.find((item) => item.name === productName).price} (x${productCount})</p>
+                <!-- Thêm các thông tin sản phẩm khác cần hiển thị -->
+                <div class="row mx-3 text-center d-flex justify-content-end">
+                  <div class="col-3">
+                    <button class="btn btn-danger w-100 " onclick="removeItemByName('${productName}')">
+                      <i class="bi bi-trash"></i> Xoá sản phẩm
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      cartItemsContainer.innerHTML += productHTML;
+    });
+
+    // Tính tổng tiền dựa trên danh sách sản phẩm có số lượng
+    var total = calculateTotalPriceWithCount(cartItems, productCounts);
+
+    // Hiển thị tổng tiền với định dạng tiền tệ
+    totalPriceElement.innerText = 'Tổng giá: ' + formatCurrency(total);
+  }
+}
+
+function removeItemByName(productName) {
+  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Tìm index của sản phẩm cần xoá
+  var index = cartItems.findIndex((item) => item.name === productName);
+
+  if (index !== -1) {
+    cartItems.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    displayCartItems(); // Cập nhật hiển thị giỏ hàng sau khi xoá
+  }
+}
+
+function formatCurrency(amount) {
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+}
+
+function submitPayment() {
+  // Xử lý thanh toán ở đây (gửi dữ liệu đến server, chuyển hướng trang, ...)
+  alert('Thanh toán thành công!');
+  // Sau khi thanh toán, bạn có thể xoá giỏ hàng hoặc thực hiện các bước khác theo yêu cầu của bạn.
+  localStorage.removeItem('cart');
+  displayCartItems(); // Cập nhật hiển thị giỏ hàng sau khi xoá
+}
+
+</script>
+
+</body>
+</html>
